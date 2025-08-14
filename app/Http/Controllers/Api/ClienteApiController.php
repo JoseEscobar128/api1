@@ -78,6 +78,7 @@ class ClienteApiController extends Controller
                 $cliente = Cliente::make($clienteData);
                 $cliente->direccion()->associate($direccion);
                 $cliente->save();
+                $cliente->assignRole('CLIENTE');
                 return $cliente;
             });
 
