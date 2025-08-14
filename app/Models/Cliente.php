@@ -15,7 +15,7 @@ class Cliente extends Authenticatable
 {
     use SoftDeletes, HasApiTokens, HasRoles;
 
-    protected $guard_name = 'api';
+    protected $guard_name = 'cliente';
 
     protected $fillable = [
         'email', 'nombre', 'apellido', 'direccion_id',
