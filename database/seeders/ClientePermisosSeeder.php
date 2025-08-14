@@ -154,7 +154,7 @@ class ClientePermisosSeeder extends Seeder
                 'dashboard.view',
             ],
             'CLIENTE' => [
-                'cliente.view',
+                'clientes.view_all',
                 'cliente.update',
                 'cliente.delete',
                 'productos.view_all',
