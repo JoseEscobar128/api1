@@ -160,6 +160,8 @@ class ClientePermisosSeeder extends Seeder
                 'productos.view_all',
                 'pedidos.create',
                 'pedidos.view',
+                'sucursales.view_all',
+                'categorias.view_all',
             ],
         ];
 
