@@ -45,7 +45,7 @@ class EmpleadoRequest extends FormRequest
                 'curp' => 'nullable|size:18|unique:empleados,curp',
                 'nss' => 'nullable|size:11|unique:empleados,nss',
                 'fecha_contratacion' => 'required|date|before_or_equal:today',
-                'role_id' => 'required|exists:roles,id',
+                'puesto_id' => 'required|exists:roles,id',
                 'estatus' => 'in:activo,baja',
                 'huella' => 'nullable|string',
             ];
