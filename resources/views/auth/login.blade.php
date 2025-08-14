@@ -22,6 +22,7 @@
 
 
       <img src="/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
+<img src="/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
 
       <h1 class="text-2xl font-bold text-[color:var(--main-color)]">Iniciar sesión</h1>
     </div>
