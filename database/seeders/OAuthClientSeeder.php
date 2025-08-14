@@ -33,5 +33,12 @@ class OAuthClientSeeder extends Seeder
             'redirect_uri' => 'https://pagina-prueba.com/oauth/callback'
             //'redirect_uri' => 'http://localhost:3000/callback'
         ]);
+
+        OAuthClient::create([
+            'name' => 'App Web Local',
+            'client_id' => 'web-local',
+            'client_secret' => Hash::make('web-local-secret'),
+            'redirect_uri' => 'http://localhost:3000/callback'
+        ]);
     }
 }
