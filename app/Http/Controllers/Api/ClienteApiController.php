@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\ClienteRequest;
+use Spatie\Permission\Models\Role;
 use App\Models\Cliente;
 use App\Models\Direccion;
 use Resend\Laravel\Facades\Resend;
