@@ -27,13 +27,14 @@ return [
 
         'api' => [
             'driver' => 'sanctum',
-            'provider' => 'users', // Correcto: usa el proveedor 'users'
+            'provider' => 'clientes', // Correcto: usa el proveedor 'users'
         ],
-
+/*
         'cliente' => [
             'driver' => 'sanctum',
             'provider' => 'clientes',
         ],
+        */
 
         'empleado' => [
             'driver' => 'sanctum',
