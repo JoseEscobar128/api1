@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Oauth\OAuthController;
 use App\Http\Controllers\Oauth\LoginOAuthController;
 
-
+// Prefijo global para todas las rutas web de OAuth federado
+Route::prefix('api/v1')->middleware('web')->group(function () {
 
 // Ruta inicial de autorización OAuth para iOS y Android
 Route::get('/oauth/authorize', [OAuthController::class, 'authorizeRequest']);
 
 
 
-Route::middleware('web')->group(function () {
+
 
     // Página de login (formulario)
     Route::get('/login-cliente', function () {
