@@ -18,7 +18,8 @@
   <div class="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
 
     <div class="text-center mt-6 mb-4">
-     
+      <img src="{{ asset('images/6.png') }}" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
+
       <img src="/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
 
       <h1 class="text-2xl font-bold text-[color:var(--main-color)]">Iniciar sesión</h1>
