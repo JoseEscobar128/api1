@@ -51,7 +51,7 @@
 
     <!-- Logo -->
     <div class="text-center mt-6">
-      <img src="{{ asset('images/6.png') }}" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-4">
+<img src="/api/v1/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
     </div>
 
     <!-- Encabezado -->
