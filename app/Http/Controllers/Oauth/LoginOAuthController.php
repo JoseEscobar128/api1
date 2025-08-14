@@ -23,7 +23,9 @@ class LoginOAuthController extends Controller
     {
         $request->validate([
             'login' => 'required|string',
-            'password' => 'required|string'
+            'password' => 'required|string',
+            'g-recaptcha-response' => 'required|captcha',
+            
         ]);
 
 

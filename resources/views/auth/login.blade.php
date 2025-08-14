@@ -12,6 +12,9 @@
       --main-color: #D78D16;
     }
   </style>
+
+  {{-- Script de Google reCAPTCHA --}}
+  {!! NoCaptcha::renderJs() !!}
 </head>
 
 <body class="bg-white min-h-screen flex items-center justify-center px-4 py-8">
@@ -19,8 +22,8 @@
 
     <div class="text-center mt-6 mb-4">
 
-<!-- Usa esta ruta en tu Blade template -->
-<img src="/api/v1/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
+      <!-- Usa esta ruta en tu Blade template -->
+      <img src="/api/v1/images/6.png" alt="Logo Mesa Fácil" class="h-40 mx-auto mb-2">
       <h1 class="text-2xl font-bold text-[color:var(--main-color)]">Iniciar sesión</h1>
     </div>
 
@@ -86,6 +89,12 @@
               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[color:var(--main-color)] focus:border-[color:var(--main-color)]"
               placeholder="••••••••" required>
           </div>
+        </div>
+        <div class="mb-4">
+          {!! NoCaptcha::display() !!}
+          @error('g-recaptcha-response')
+          <span class="text-red-500 text-sm">{{ $message }}</span>
+          @enderror
         </div>
 
         {{-- Botón --}}
