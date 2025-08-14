@@ -116,6 +116,7 @@ class OAuthController extends Controller
             $token = $cliente->createToken('access_token')->plainTextToken;
             $tipo = 'cliente';
             $nombre = $cliente->nombre;
+            $rol = $cliente->getRoleNames()->first();
         } elseif ($authCode->usuario_id) {
             $usuario = \App\Models\Usuario::with('empleado.rol')->find($authCode->usuario_id);
 
