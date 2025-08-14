@@ -16,10 +16,10 @@ Route::prefix('v1')->group(function () {
         Route::post('/register', [EmpleadoController::class, 'store']);
 
         Route::middleware(['auth:sanctum'])->group(function () {
-            Route::get('/', [EmpleadoController::class, 'index'])->middleware('permission:empleados.view_all,api');
-            Route::get('/{id}', [EmpleadoController::class, 'show'])->middleware('permission:empleados.view,api');
-            Route::put('/{id}', [EmpleadoController::class, 'update'])->middleware('permission:empleados.update,api');
-            Route::delete('/{id}', [EmpleadoController::class, 'destroy'])->middleware('permission:empleados.delete,api');
+            Route::get('/', [EmpleadoController::class, 'index'])->middleware('permission:empleados.view_all');
+            Route::get('/{id}', [EmpleadoController::class, 'show'])->middleware('permission:empleados.view');
+            Route::put('/{id}', [EmpleadoController::class, 'update'])->middleware('permission:empleados.update');
+            Route::delete('/{id}', [EmpleadoController::class, 'destroy'])->middleware('permission:empleados.delete');
         });
     });
 
