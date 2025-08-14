@@ -214,6 +214,7 @@ class ClienteApiController extends Controller
                     'cliente' => [
                         'nombre' => $cliente->nombre,
                         'apellido' => $cliente->apellido,
+                        'rol' => $cliente->getRoleNames()->first(),
                     ]
                 ]
             ], Response::HTTP_OK);
