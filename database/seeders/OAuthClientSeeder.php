@@ -34,6 +34,14 @@ class OAuthClientSeeder extends Seeder
             //'redirect_uri' => 'http://localhost:3000/callback'
         ]);
 
+         OAuthClient::create([
+            'name' => 'App Web de Cliente',
+            'client_id' => 'web123',
+            'client_secret' => Hash::make('web-secret'),
+            'redirect_uri' => 'https://pagina-prueba.com/api/v1/callback'
+            //'redirect_uri' => 'http://localhost:3000/callback'
+        ]);
+
         OAuthClient::create([
             'name' => 'App Web Local',
             'client_id' => 'web-local',
