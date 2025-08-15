@@ -22,7 +22,8 @@ return [
     'allowed_methods' => ['*'],
 
     // Aquí pones la URL de tu app web que corre en el puerto 3000
-    'allowed_origins' => ['http://localhost:3000'],
+    //'allowed_origins' => ['http://localhost:3000'],
+    'allowed_origins' => ['http://localhost:3000', 'https://pagina-prueba.com'],
 
     'allowed_origins_patterns' => [],
 
