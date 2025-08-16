@@ -149,7 +149,6 @@ class OAuthController extends Controller
             $token = $usuario->createToken('access_token')->plainTextToken;
             $tipo = 'empleado';
             $nombre = $usuario->usuario;
-          
         } else {
             Log::warning('Código de autorización sin cliente_id ni usuario_id');
             return response()->json(['error' => 'Código de autorización inválido'], 400);
@@ -158,7 +157,7 @@ class OAuthController extends Controller
         $authCode->delete();
 
         Log::info("Token generado exitosamente para $tipo: $nombre");
-
+        /*
         return response()->json([
             'status' => 'success',
             'message' => 'Token generado correctamente',
@@ -169,6 +168,24 @@ class OAuthController extends Controller
             'nombre' => $nombre,
             'rol' => $rol,
 
-        ]);
+        ]);*/
+
+        $response = [
+            'status' => 'success',
+            'message' => 'Token generado correctamente',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'expires_in' => 3600, // 1 hora
+            'tipo_usuario' => $tipo,
+            'nombre' => $nombre,
+            'rol' => $rol,
+        ];
+
+        // Si es cliente, agregar el id
+        if ($tipo === 'cliente' && strtoupper($rol) === 'CLIENTE') {
+            $response['id_cliente'] = $cliente->id;
+        }
+
+        return response()->json($response);
     }
 }
