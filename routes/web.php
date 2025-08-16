@@ -9,8 +9,8 @@ use App\Http\Controllers\Oauth\LoginOAuthController;
 // Prefijo global para todas las rutas web de OAuth federado
 Route::prefix('api/v1')->middleware('web')->group(function () {
 
-// Ruta inicial de autorización OAuth para iOS y Android
-Route::get('/oauth/authorize', [OAuthController::class, 'authorizeRequest']);
+    // Ruta inicial de autorización OAuth para iOS y Android
+    Route::get('/oauth/authorize', [OAuthController::class, 'authorizeRequest']);
 
 
 
@@ -29,21 +29,37 @@ Route::get('/oauth/authorize', [OAuthController::class, 'authorizeRequest']);
     Route::post('/cliente/resend-otp', [LoginOAuthController::class, 'resendOTPBlade'])->name('cliente.resendOtp');
 
     Route::get('/oauth/callback', function (Request $request) {
-    $code = $request->query('code');
-    $state = $request->query('state');
+        $code = $request->query('code');
+        $state = $request->query('state');
 
-    if (!$code) {
-        abort(400, 'Missing authorization code.');
-    }
+        if (!$code) {
+            abort(400, 'Missing authorization code.');
+        }
 
-    // Opcionalmente podrías validar el state aquí
+        // Opcionalmente podrías validar el state aquí
 
-    // Redirige al esquema de escritorio
-    return redirect("myapp://callback?code={$code}&state={$state}");
+        // Redirige al esquema de escritorio
+        return redirect("myapp://callback?code={$code}&state={$state}");
     })->name('oauth.callback');
 
 
-    
+    // Nueva ruta de callback para la app web
+    Route::get('/oauth/callback2', function (Request $request) {
+        $code = $request->query('code');
+        $state = $request->query('state');
+
+        if (!$code) {
+            abort(400, 'Missing authorization code.');
+        }
+
+        // Opcionalmente podrías validar el state aquí
+
+        // Redirige al esquema de escritorio
+        return redirect('https://pagina-prueba.com/web/dashboard');
+    })->name('oauth.callback');
+
+
+
     // Página para ingresar el OTP (vista con campos ocultos desde la sesión) 
     Route::get('/otp-cliente', function () {
         return view('auth.otp', [
@@ -56,6 +72,4 @@ Route::get('/oauth/authorize', [OAuthController::class, 'authorizeRequest']);
 
     // Procesar verificación del OTP
     Route::post('/verificar-otp-cliente', [LoginOAuthController::class, 'verifyOtpBlade'])->name('cliente.otp.verify.form');
-
-
 });
