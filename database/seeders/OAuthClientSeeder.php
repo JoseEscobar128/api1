@@ -14,34 +14,20 @@ class OAuthClientSeeder extends Seeder
      */
     public function run(): void
     {
-        /* OAuthClient::create([
-            'name' => 'App Web de Cliente',
-            'client_id' => 'web123',
-            'client_secret' => bcrypt('web-secret'),
-            'redirect_uri' => 'http://localhost:3000/callback'
-        ]);*/
         OAuthClient::create([
             'name' => 'App Movil de Cliente',
             'client_id' => 'app123',
             'client_secret' => Hash::make('app-secret'),
             'redirect_uri' => 'miapp://callback'
         ]);
-        /*
-        OAuthClient::create([
-            'name' => 'App Web de Cliente',
-            'client_id' => 'web123',
-            'client_secret' => Hash::make('web-secret'),
-            'redirect_uri' => 'https://pagina-prueba.com/api/v1/oauth/callback'
-            //'redirect_uri' => 'http://localhost:3000/callback'
-        ]);*/
 
          OAuthClient::create([
             'name' => 'App Web de Cliente',
             'client_id' => 'web123',
             'client_secret' => Hash::make('web-secret'),
-            'redirect_uri' => 'https://pagina-prueba.com/api/v1/oauth/callback'
-            //'redirect_uri' => 'http://localhost:3000/callback'
+            'redirect_uri' => 'https://pagina-prueba.com/api/v1/oauth/callback2'
         ]);
+
 
         OAuthClient::create([
             'name' => 'App Web Local',
@@ -49,5 +35,13 @@ class OAuthClientSeeder extends Seeder
             'client_secret' => Hash::make('web-local-secret'),
             'redirect_uri' => 'http://localhost:8000/callback'
         ]);
+         OAuthClient::create([
+            'name' => 'App Web 1 de Cliente',
+            'client_id' => 'web1234',
+            'client_secret' => Hash::make('web-secret'),
+            'redirect_uri' => 'https://pagina-prueba.com/callback/web'
+
+        ]);
+
     }
 }
