@@ -43,20 +43,6 @@ Route::prefix('api/v1')->middleware('web')->group(function () {
     })->name('oauth.callback');
 
 
-    // Nueva ruta de callback para la app web
-    Route::get('/oauth/callback2', function (Request $request) {
-        $code = $request->query('code');
-        $state = $request->query('state');
-
-        if (!$code) {
-            abort(400, 'Missing authorization code.');
-        }
-
-        // Opcionalmente podrías validar el state aquí
-
-        // Redirige al esquema de escritorio
-        return redirect('https://pagina-prueba.com/web/dashboard');
-    })->name('oauth.callback2');
 
 
 
