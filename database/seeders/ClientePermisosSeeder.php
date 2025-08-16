@@ -63,6 +63,8 @@ class ClientePermisosSeeder extends Seeder
                 'asistencias.view_all',
                 'asistencias.sync',
                 'dashboard.view',
+		'asistencias.view_all',
+		'asistencias.create',
             ],
             'ADMIN_SUC' => [
                 'usuarios.view_all',
@@ -113,6 +115,8 @@ class ClientePermisosSeeder extends Seeder
                 'asistencias.view_all',
                 'asistencias.sync',
                 'dashboard.view',
+		'asistencias.view_all',
+                'asistencias.create',
             ],
             'CAJERO' => [
                 'productos.view_all',
