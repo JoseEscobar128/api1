@@ -40,7 +40,7 @@ OAuthClient::create([
             'client_id' => 'web123',
             'client_secret' => Hash::make('web-secret'),
             //'redirect_uri' => 'http://localhost:3000/oauth/callback'
-            'redirect_uri' => 'https://pagina-prueba.com/oauth/callback'
+            'redirect_uri' => 'https://pagina-prueba.com/api/v1/oauth/callback'
         ]);
 
     }
