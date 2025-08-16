@@ -32,7 +32,7 @@ OAuthClient::create([
             'name' => 'App Web Local',
             'client_id' => 'web-local',
             'client_secret' => Hash::make('web-local-secret'),
-            'redirect_uri' => 'http://127.0.0.1:3000/oauth/callback'
+            'redirect_uri' => 'http://localhost:3000/oauth/callback'
         ]);
 
          OAuthClient::create([
