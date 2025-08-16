@@ -56,7 +56,7 @@ Route::prefix('api/v1')->middleware('web')->group(function () {
 
         // Redirige al esquema de escritorio
         return redirect('https://pagina-prueba.com/web/dashboard');
-    })->name('oauth.callback');
+    })->name('oauth.callback2');
 
 
 
